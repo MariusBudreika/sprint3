@@ -1,0 +1,18 @@
+{
+    "name": "marius/sprint3",
+    "authors": [
+        {
+            "name": "MariusBudreika",
+            "email": "mariusbudreika09@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { 
+			"Models\\": "src/models/"
+		}
+    },
+    "require": {
+        "doctrine/orm": "^2.9",
+        "symfony/cache": "^5.3"
+    }
+}
