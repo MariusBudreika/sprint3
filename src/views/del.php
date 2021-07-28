@@ -1,5 +1,5 @@
 <?php
-namespace Models;
+
 include_once 'bootstrap.php';
 
 if(isset($_GET['edelete'])){

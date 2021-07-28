@@ -25,10 +25,11 @@ print("<table id='proj'>
 <th>Actions</th>
 </tr>");
     foreach ($project as $p)
+    foreach ($p->getEmployeesData()as $employee)
         print("<tr>"
             . "<td>" . $p->getId()  . "</td>"
             . "<td>" . $p->getProject() . "</td>"
-            . "<td>" . $p->getName() . "</td>"
+            . "<td>" . $employee->getName() . "</td>"
             . "<td><button><a href='del.php?pdelete={$p->getId()}'>DELETE</a></button>"
             . "<button><a href='?updatable={$p->getId()}'>UPDATE</a></button></td>"
             . "</tr>");
