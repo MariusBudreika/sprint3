@@ -1,9 +1,9 @@
 # Personal managment system (CRUD)
 ## Features
 
-* Create project/employee(in progress).
+* Create project/employee (in progress).
 * Update employee/project.
-* Delete employee/project(no employee has to be assigned to project).
+* Delete employee/project (no employee has to be assigned to project).
 
 ## How to open File Manager
 
