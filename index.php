@@ -18,12 +18,18 @@ switch ($url) {
     case $prefix .'/addproj' :
         require __DIR__ . '/src/views/addproj.php';
         break;
-    case preg_filter('/edelete=[0-9]+/', '$0' ,$request):
+    case $prefix . '/del.php?edelete='. $_GET['edelete']:
         require __DIR__ . '/src/views/del.php';    
         break;
-    case preg_filter('/pdelete=[0-9]+/', '$0' ,$request):
+    case $prefix . '/del.php?pdelete='. $_GET['pdelete']: 
         require __DIR__ . '/src/views/del.php';    
         break;
+    case $prefix . '/updateProj.php?pupdate=' .$_GET['pupdate']:
+        require __DIR__ . '/src/views/updateProj.php';    
+        break;
+    case $prefix . '/updateEmp.php?eupdate=' .$_GET['eupdate']:
+        require __DIR__ . '/src/views/updateEmp.php';    
+        break;  
     default:
         http_response_code(404);
         require __DIR__ . '/src/views/404.php';

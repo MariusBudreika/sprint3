@@ -31,6 +31,12 @@ class Employee
      */
     private $empProject;
 
+    public function __construct($name, $project_id)
+    {
+        $this->name = $name;
+        $this->year = $project_id;
+    }
+
     public function getEmpProject()
     {
         return $this->empProject;

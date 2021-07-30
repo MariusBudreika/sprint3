@@ -1,12 +1,10 @@
 <?php
-
 namespace Models;
-
 include_once 'bootstrap.php';
 
-if (isset($_REQUEST['projAdd'])) {
+if (isset($_POST['projAdd'])) {
   $proj = new Project();
-  $proj->setProject($_REQUEST['project']);
+  $proj->setProject($_POST['project']);
   $entityManager->persist($proj);
   $entityManager->flush();
   header("Location: proj");

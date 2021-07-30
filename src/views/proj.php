@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee</title>
-    <div class="header">
-        <div>
-            <a href="emp">Employees</a>
-            <a href="proj">Project</a>
-        </div>
+    <title>Project</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<header>
+    <a href="emp">Employees</a>
+    <a href="proj">Project</a>
+</header>
+
 <?php
 include_once 'bootstrap.php';
 
-print("<pre>");
-$project = $entityManager->getRepository('Models\Project')->findAll();
-print("<table id='proj'>
+$proj = $entityManager->getRepository('Models\Project')->findAll();
+print("<table>
 <tr>
 <th>ID</th>
 <th>Project</th>
 <th>Employee</th>
 <th>Actions</th>
 </tr>");
-    foreach ($project as $p)
-    foreach ($p->getEmployeesData()as $employee)
+    foreach ($proj as $p) {
+    $empName = ''; 
+    foreach ($p->getEmployeesData()as $e) {
+        $empName.= $e->getName() . ' ';}
         print("<tr>"
             . "<td>" . $p->getId()  . "</td>"
             . "<td>" . $p->getProject() . "</td>"
-            . "<td>" . $employee->getName() . "</td>"
+            . "<td>" . $empName . "</td>"
             . "<td><button><a href='del.php?pdelete={$p->getId()}'>DELETE</a></button>"
-            . "<button><a href='?updatable={$p->getId()}'>UPDATE</a></button></td>"
+            . "<button><a href='updateProj.php?pupdate={$p->getId()}'>UPDATE</a></button></td>"
             . "</tr>");
+    }
     print("</table>"); 
 ?>
-<button><a href="addproj">Create Project</a></button></td>
-
+<button class="addbutton"><a href="addproj">Create Project</a></button></td>
 </body>
 </html>
